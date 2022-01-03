@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp22.Pages.MainPage"
+			 xmlns:local="clr-namespace:MauiApp22"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+	<Grid RowSpacing="25"
+          RowDefinitions="Auto"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand">
+
+		<ListView
+                x:Name="MyListView"
+                ItemsSource="{Binding NameModelList}"
+                Grid.Row="0"
+                WidthRequest="800"
+                HeightRequest="800"
+                BackgroundColor="Gray"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<local:MyCustomViewCell />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+	</Grid>
+</ContentPage>
